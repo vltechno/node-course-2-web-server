@@ -38,14 +38,18 @@ app.get('/', (req, res) => {
     pageTitle: 'Home Page, please use: git-scm.com for how to use git'
     ,msg: 'welcom to my websites'
   })
-});0
+});
 
 app.get('/about', (req, res) => {
   res.render('about.hbs',{
     pageTitle: 'About page'
   });
 });
-
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects'
+  });
+});
 // /bad - send back json with errorMessage
 app.get('/bad', (req, res) => {
   res.send({
