@@ -5,6 +5,7 @@ var app = express();
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
+const port = process.env.PORT || 3000;
 
 hbs.registerHelper('curYear',() => {
   return new Date().getFullYear();
@@ -52,6 +53,6 @@ app.get('/bad', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server is up on port 3000');
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
 });
